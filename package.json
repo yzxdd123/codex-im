@@ -1,0 +1,47 @@
+{
+  "name": "@vdug/codex-im",
+  "version": "0.2.2",
+  "description": "Enterprise WeCom local bridge for Codex.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yzxdd123/codex-im.git"
+  },
+  "homepage": "https://github.com/yzxdd123/codex-im#readme",
+  "bugs": {
+    "url": "https://github.com/yzxdd123/codex-im/issues"
+  },
+  "type": "commonjs",
+  "main": "src/index.js",
+  "keywords": [
+    "codex",
+    "wecom",
+    "weixin",
+    "bot",
+    "cli",
+    "remote"
+  ],
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    ".env.example"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "codex-im": "./bin/codex-im.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "wecom-bot": "node ./bin/codex-im.js wecom-bot",
+    "check": "node --check ./src/index.js && node --check ./src/app/wecom-bot-runtime.js && node --check ./src/app/dispatcher.js && node --check ./src/app/command-dispatcher.js && node --check ./src/app/codex-event-service.js && node --check ./src/infra/codex/message-utils.js && node --check ./src/infra/codex/model-state.js && node --check ./src/infra/codex/quota-client.js && node --check ./src/infra/wecom/api-client.js && node --check ./src/infra/wecom/crypto.js && node --check ./src/infra/wecom/message-parser.js && node --check ./src/infra/codex/rpc-client.js && node --check ./src/infra/storage/session-store.js && node --check ./src/infra/config/config.js && node --check ./src/domain/approval/approval-service.js && node --check ./src/domain/approval/approval-policy.js && node --check ./src/domain/thread/thread-service.js && node --check ./src/domain/workspace/workspace-service.js && node --check ./src/domain/quota/quota-service.js && node --check ./src/domain/session/binding-context.js && node --check ./src/shared/workspace-paths.js && node --check ./src/shared/command-parsing.js && node --check ./src/shared/constants.js && node --check ./src/shared/errors.js && node --check ./src/presentation/card/builders.js && node --check ./src/presentation/card/card-service.js && node --check ./src/presentation/message/normalizers.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ws": "^8.19.0"
+  }
+}
